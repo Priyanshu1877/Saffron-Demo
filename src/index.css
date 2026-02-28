@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 97%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 36 60% 52%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 30 10% 25%;
+
+    --muted: 35 20% 94%;
+    --muted-foreground: 30 8% 50%;
+
+    --accent: 0 45% 30%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 36 60% 52%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 36 60% 52%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 35 30% 92%;
+    --sidebar-accent-foreground: 30 10% 25%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 36 60% 52%;
+
+    /* Custom luxury tokens */
+    --gold: 36 60% 52%;
+    --gold-light: 38 55% 70%;
+    --gold-dark: 34 65% 38%;
+    --cream: 40 33% 96%;
+    --charcoal: 30 10% 15%;
+    --burgundy: 0 45% 30%;
+    --warm-gray: 30 8% 50%;
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+
+  .dark {
+    --background: 30 10% 8%;
+    --foreground: 40 25% 92%;
+    --card: 30 10% 10%;
+    --card-foreground: 40 25% 92%;
+    --popover: 30 10% 10%;
+    --popover-foreground: 40 25% 92%;
+    --primary: 36 60% 52%;
+    --primary-foreground: 30 10% 8%;
+    --secondary: 30 12% 18%;
+    --secondary-foreground: 40 25% 92%;
+    --muted: 30 12% 18%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 0 45% 40%;
+    --accent-foreground: 40 25% 92%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 36 60% 52%;
+    --sidebar-background: 30 10% 8%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 36 60% 52%;
+    --sidebar-primary-foreground: 30 10% 8%;
+    --sidebar-accent: 30 12% 18%;
+    --sidebar-accent-foreground: 40 25% 92%;
+    --sidebar-border: 30 12% 20%;
+    --sidebar-ring: 36 60% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+
+  .text-warm-gray {
+    color: hsl(var(--warm-gray));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .luxury-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+
+  .gold-text-gradient {
+    background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .luxury-shadow {
+    box-shadow: 0 4px 30px -5px hsl(var(--gold) / 0.15);
+  }
+
+  .luxury-border {
+    border: 1px solid hsl(var(--gold) / 0.2);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--cream));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold) / 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--gold) / 0.6);
+}
